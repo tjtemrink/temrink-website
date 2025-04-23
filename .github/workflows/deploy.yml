@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: Azure Static Web Apps CI/CD
 
 on:
@@ -11,11 +12,22 @@ jobs:
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
+
       - name: Upload to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
+          # generated in Azure portal → your Static Web App → Manage deployment token
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          output_location: "/"
+          # used for GitHub comments/status if you enable them
+          repo_token:                ${{ secrets.GITHUB_TOKEN }}
+          action:                    upload
+
+          # ─── where your site lives in the repo ───
+          app_location:              "/"
+
+          # ─── you don't have any Azure Functions, so skip it ───
+          api_location:              ""
+
+          # ─── copy the built site into the root of wwwroot ───
+          output_location:           "/"
+

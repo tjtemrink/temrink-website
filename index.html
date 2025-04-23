@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temrink | Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #0078D4;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .logo {
-            max-height: 50px;
-        }
-        nav {
-            background-color: #005a9e;
-            padding: 10px;
-            text-align: center;
-        }
-        select {
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Temrink | Home</title>
+  <style>
+    /* reset & base */
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:#f4f4f4; color:#222; }
+
+    /* header layout */
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:#0078D4;
+      padding:10px 20px;
+      color:white;
+    }
+    .logo {
+      max-height:50px;
+      width:auto;
+    }
+    .site-title {
+      flex:1;
+      text-align:center;
+      font-size:1.5em;
+      font-weight:bold;
+    }
+    .header-actions {
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .header-actions select,
+    .header-actions button {
+      padding:6px 12px;
+      font-size:1em;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+    }
+    .header-actions select {
+      background:white;
+      color:#0078D4;
+    }
+    .header-actions button {
+      background:#00a050;
+      color:white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img class="logo" src="https://temrink.com/logo.png" alt="Temrink Logo">
-        <h1>Welcome to Temrink</h1>
-    </header>
 
-    <nav>
-        <label for="menu">Select a page:</label>
-        <select id="menu" onchange="navigate(this.value)">
-            <option value="#">-- Choose --</option>
-            <option value="attendance.html">Attendance System</option>
-            <option value="#">Coming Soon</option>
-        </select>
-    </nav>
+  <header>
+    <!-- logo -->
+    <img class="logo" src="img/temrink-lock-icon.png" alt="Temrink Logo">
 
-    <script>
-        function navigate(path) {
-            if (path !== "#") {
-                window.location.href = path;
-            }
-        }
-    </script>
+    <!-- centered site title -->
+    <div class="site-title">Welcome to Temrink</div>
+
+    <!-- right-hand nav/actions -->
+    <div class="header-actions">
+      <!-- Services dropdown -->
+      <select onchange="navigate(this.value)">
+        <option value="#">Services</option>
+        <option value="attendance.html">Attendance System</option>
+        <option value="services.html">Other Service</option>
+      </select>
+
+      <!-- Contact page -->
+      <button onclick="navigate('contact.html')">Contact Us</button>
+
+      <!-- Phone -->
+      <span>📞 (800) 555-1234</span>
+    </div>
+  </header>
+
+  <script>
+    function navigate(url) {
+      if (url && url !== "#") {
+        window.location.href = url;
+      }
+    }
+  </script>
+
+  <!-- main content -->
+  <main style="padding:20px; text-align:center;">
+    <p>Welcome! Please choose from our menu above to get started.</p>
+  </main>
+
 </body>
 </html>
+
+

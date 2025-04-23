@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temrink | Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0078D4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            max-height: 50px;
+        }
+        nav {
+            background-color: #005a9e;
+            padding: 10px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://temrink.com/logo.png" alt="Temrink Logo">
+        <h1>Welcome to Temrink</h1>
+    </header>
+
+    <nav>
+        <label for="menu">Select a page:</label>
+        <select id="menu" onchange="navigate(this.value)">
+            <option value="#">-- Choose --</option>
+            <option value="attendance.html">Attendance System</option>
+            <option value="#">Coming Soon</option>
+        </select>
+    </nav>
+
+    <script>
+        function navigate(path) {
+            if (path !== "#") {
+                window.location.href = path;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -3,50 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Temrink | Other Services</title>
-  <!-- same styles... -->
+  <title>Temrink | Our Services</title>
   <style>
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:Arial,sans-serif; background:#f4f4f4; color:#222; }
+    /* same header CSS */
+    * { box-sizing:border-box; margin:0; padding:0 }
+    body { font-family:Arial,sans-serif; background:#f4f4f4; color:#222 }
     header {
       display:flex; align-items:center; justify-content:space-between;
       background:#0078D4; padding:10px 20px; color:white;
     }
-    .logo { max-height:50px; width:auto; }
-    .site-title { flex:1; text-align:center; font-size:1.5em; font-weight:bold; }
-    .header-actions { display:flex; align-items:center; gap:10px; }
+    .logo { max-height:50px; width:auto }
+    .site-title {
+      flex:1; text-align:center; font-size:1.5em; font-weight:bold;
+    }
+    .header-actions {
+      display:flex; align-items:center; gap:10px;
+    }
     .header-actions select,
-    .header-actions button { padding:6px 12px; font-size:1em; border:none; border-radius:4px; cursor:pointer; }
-    .header-actions select { background:white; color:#0078D4; }
-    .header-actions button { background:#00a050; color:white; }
+    .header-actions button {
+      padding:6px 12px; font-size:1em; border:none; border-radius:4px;
+      cursor:pointer;
+    }
+    .header-actions select {
+      background:white; color:#0078D4;
+    }
+    .header-actions button {
+      background:#00a050; color:white;
+    }
+    .header-actions span {
+      font-weight:bold; margin-left:4px;
+    }
   </style>
+  <script>
+    function navigate(url) {
+      if (url && url !== '#') window.location.href = url;
+    }
+  </script>
 </head>
 <body>
-
   <header>
     <img class="logo" src="img/temrink-lock-icon.png" alt="Temrink Logo">
-    <div class="site-title">Other Services</div>
+    <div class="site-title">Our Services</div>
     <div class="header-actions">
       <select onchange="navigate(this.value)">
         <option value="#">Services</option>
         <option value="attendance.html">Attendance System</option>
-        <option value="services.html">Other Service</option>
+        <option value="coming-soon.html">Other Service</option>
       </select>
+      <button onclick="navigate('index.html')">Home</button>
       <button onclick="navigate('contact.html')">Contact Us</button>
       <span>📞 (800) 555-1234</span>
     </div>
   </header>
 
-  <script>
-    function navigate(url) {
-      if (url && url !== "#") window.location.href = url;
-    }
-  </script>
-
   <main style="padding:20px;">
-    <h2>Our Other Services</h2>
-    <p>Describe your other offerings here.</p>
+    <h2>Temrink Service Offerings</h2>
+    <ul>
+      <li>Attendance System</li>
+      <li>…coming soon…</li>
+    </ul>
   </main>
-
 </body>
 </html>

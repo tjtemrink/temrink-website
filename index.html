@@ -5,105 +5,62 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Temrink | Home</title>
   <style>
-    /* reset & base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-    }
-
-    /* header */
+    * { box-sizing:border-box; margin:0; padding:0 }
+    body { font-family:Arial,sans-serif; background:#f4f4f4; color:#222 }
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #0078D4;
-      padding: 10px 20px;
-      color: white;
+      display:flex; align-items:center; justify-content:space-between;
+      background:#0078D4; padding:10px 20px; color:white;
     }
-    .logo {
-      max-height: 50px;
-      width: auto;
-    }
+    .logo { max-height:50px; width:auto }
     .site-title {
-      flex: 1;
-      text-align: center;
-      font-size: 1.5em;
-      font-weight: bold;
+      flex:1; text-align:center; font-size:1.5em; font-weight:bold;
     }
     .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display:flex; align-items:center; gap:10px;
     }
     .header-actions select,
     .header-actions button {
-      padding: 6px 12px;
-      font-size: 1em;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      padding:6px 12px; font-size:1em; border:none; border-radius:4px;
+      cursor:pointer;
     }
     .header-actions select {
-      background: white;
-      color: #0078D4;
+      background:white; color:#0078D4;
     }
     .header-actions button {
-      background: #00a050;
-      color: white;
+      background:#00a050; color:white;
     }
     .header-actions span {
-      font-weight: bold;
-      margin-left: 4px;
-    }
-
-    /* main content */
-    .main-content {
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 1.1em;
+      font-weight:bold; margin-left:4px;
     }
   </style>
+  <script>
+    function navigate(url) {
+      if (url && url !== '#') window.location.href = url;
+    }
+  </script>
 </head>
 <body>
-
   <header>
-    <!-- left: logo -->
     <img class="logo" src="img/temrink-lock-icon.png" alt="Temrink Logo">
-
-    <!-- center: page title -->
     <div class="site-title">Welcome to Temrink</div>
-
-    <!-- right: services dropdown, buttons, phone -->
     <div class="header-actions">
       <select onchange="navigate(this.value)">
         <option value="#">Services</option>
         <option value="attendance.html">Attendance System</option>
         <option value="coming-soon.html">Other Service</option>
       </select>
-
-      <button onclick="navigate('contact.html')">Contact Us</button>
       <button onclick="navigate('index.html')">Home</button>
-
+      <button onclick="navigate('contact.html')">Contact Us</button>
       <span>📞 (800) 555-1234</span>
     </div>
   </header>
 
-  <main class="main-content">
+  <main style="padding:20px; text-align:center;">
     <p>Welcome! Please choose from our menu above to get started.</p>
   </main>
-
-  <script>
-    function navigate(url) {
-      if (url && url !== '#') {
-        window.location.href = url;
-      }
-    }
-  </script>
-
 </body>
 </html>
+
 
 
 
